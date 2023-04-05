@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>sign_key.snk</AssemblyOriginatorKeyFile>
+		<SonarQubeExclude>True</SonarQubeExclude>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="sign_key.snk" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="ini-parser" Version="2.5.2" />
+	  <PackageReference Include="IPNetwork2" Version="2.6.556" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="System.Web" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="RequestsCounterFilter.ini">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
